@@ -2,9 +2,53 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>HashTags.js examples</title>
+
+    <style>
+        html, body {
+            margin:0;
+            padding:0;
+        }
+        html {
+            background:#f2f2f2;
+        }
+        body {
+            font-size: 12px;
+        }
+        form {
+            padding: 40px;
+            width: 400px;
+        }
+        #hashTagsInput {
+            border: 1px solid;
+            width: 100%;
+            color: #333;
+        }
+    </style>
+
+    <link href="dist/hashtags.min.css" type="text/css" rel="stylesheet"/>
+
 </head>
 <body>
+
+    <form>
+        <!--<input type="text" id="hashTagsInput"-->
+               <!--value="some regular width hashtag and very looooooooooooooooooooooooooooong hashtag"/>-->
+        <div id="hashTagsInput"
+             class="ht-hashtag-container"
+             data-value="some regular width hashtag and very looooooooooooooooooooooooooooong hashtag">
+            <div class="ht-hashtag">
+                <span class="ht-hashtag-label">#</span>
+                <span class="ht-hashtag-value">hashtag</span>
+                <span class="ht-hashtag-remove">x</span>
+            </div>
+        </div>
+    </form>
+
+    <script src="src/hashtags.js"></script>
+    <script>
+        new HashTags(document.getElementById('hashTagsInput'));
+    </script>
 
 </body>
 </html>
