@@ -1,0 +1,98 @@
+.ht {
+
+  @margin: 10px;
+  @padding : 8px;
+  @height : 32px;
+
+  &-hashtag {
+
+    &-container {
+      cursor: text;
+      position: relative;
+      padding: @margin @margin 0;
+      border: 1px solid;
+      color: #333;
+      overflow: auto;
+      background: #fff;
+      box-sizing: border-box;
+
+      &--focused {
+        border-color: #009998;
+      }
+    }
+
+    &-input {
+      border: 0;
+      margin: 0 0 @margin 0;
+      background: none;
+      text-align: left;
+      outline: none;
+
+      .placeholder {
+        font-size: 90%;
+        letter-spacing: -0.03em;
+      }
+
+      &::-webkit-input-placeholder { .placeholder; }
+      &:-moz-placeholder { .placeholder; }
+      &::-moz-placeholder { .placeholder; }
+      &:-ms-input-placeholder { .placeholder; }
+    }
+
+    &-input,
+    & {
+      font-size: 1rem;
+      height: @height;
+      line-height: @height;
+      white-space: nowrap;
+      float:left;
+    }
+
+    & {
+      cursor: pointer;
+      margin: 0 @margin @margin 0;
+      background-color: #333;
+      color: #fff;
+
+      &:hover {
+        background-color: #545454;
+      }
+
+      &--focused {
+        &,
+        &:hover {
+          background-color: #777;
+        }
+      }
+    }
+
+    &-label,
+    &-remove,
+    &-value {
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      height: 100%;
+    }
+
+    &-label ,
+    &-remove {
+      display: inline-block;
+    }
+
+    &-label {
+      padding-left: @padding;
+    }
+    &-value {
+      padding: 0 @padding;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &-remove {
+      padding-right: @padding;
+    }
+
+  }
+
+}

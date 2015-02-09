@@ -8,6 +8,7 @@
         html, body {
             margin:0;
             padding:0;
+            font-family: 'Open Sans', sans-serif;
         }
         html {
             background:#f2f2f2;
@@ -26,7 +27,9 @@
         }
     </style>
 
-    <link href="dist/hashtags.min.css" type="text/css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="dist/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <link href="dist/css/hashtags.min.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -34,20 +37,33 @@
     <form>
         <!--<input type="text" id="hashTagsInput"-->
                <!--value="some regular width hashtag and very looooooooooooooooooooooooooooong hashtag"/>-->
-        <div id="hashTagsInput"
-             class="ht-hashtag-container"
-             data-value="some regular width hashtag and very looooooooooooooooooooooooooooong hashtag">
-            <div class="ht-hashtag">
-                <span class="ht-hashtag-label">#</span>
-                <span class="ht-hashtag-value">hashtag</span>
-                <span class="ht-hashtag-remove">x</span>
-            </div>
-        </div>
+        <!--<div id="hashTagsInput" class="ht-hashtag-container">-->
+            <!--<div class="ht-hashtag">-->
+                <!--<span class="ht-hashtag-label">-->
+                    <!--&lt;!&ndash;<i class="fa fa-tag" title="#"></i>&ndash;&gt;-->
+                    <!--#-->
+                <!--</span>-->
+                <!--<span class="ht-hashtag-value">hashtag</span>-->
+                <!--<span class="ht-hashtag-remove">-->
+                    <!--<i class="fa fa-times"></i>-->
+                <!--</span>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div id="hashTagsInput" class="ht-hashtag-container"></div>
+
     </form>
 
-    <script src="src/hashtags.js"></script>
+    <script src="dist/js/hashtags.min.js"></script>
     <script>
-        new HashTags(document.getElementById('hashTagsInput'));
+        var ht = new HashTags(document.getElementById('hashTagsInput'), {
+            inputPlaceholder : 'Введите свою профессию или умение'
+        });
+
+        ht.push('some regular width hashtag and very');
+        ht.push('looooooooooooooooooooooooooooong');
+        ht.push('hashtag');
+
     </script>
 
 </body>
